@@ -1,32 +1,32 @@
 ﻿// ************************************************
 //      Project: Chronos.UI
-//         File: TimeModeToIsVisibleConverter.cs
+//         File: DurationToHumanTextConverter.cs
 //       Author: 
 // ************************************************
 
 namespace Chronos.UI
 {
-    using Microsoft.Maui.Controls.Xaml;
     using System;
     using System.Globalization;
 
-    public class TimeModeToIsVisibleConverter : IValueConverter, IMarkupExtension
+    internal class DurationToHumanTextConverter : IValueConverter, IMarkupExtension
     {
+        /// <summary>
+        /// Converts the given <paramref name="value"/> to a human-readable string.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is TimeMode timeMode && parameter is SourceControl source)
+            if (value is TimeSpan timeSpan)
             {
-                if (source == SourceControl.PauseButton)
-                {
-                    return timeMode != TimeMode.Stopped;
-                }
-                else
-                {
-                    return timeMode != TimeMode.Paused;
-                }
+                return $"{timeSpan.Hours}h {timeSpan.Minutes}m {timeSpan.Seconds}s";
             }
 
-            return false;
+            return System.Convert.ToString(value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -40,4 +40,3 @@ namespace Chronos.UI
         }
     }
 }
-

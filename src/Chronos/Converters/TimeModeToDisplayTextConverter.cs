@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ************************************************
+//      Project: Chronos.UI
+//         File: TimeModeToDisplayTextConverter.cs
+//       Author: 
+// ************************************************
 
 namespace Chronos.UI
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Net;
+    using System.Text;
+    using System.Threading.Tasks;
 
     public class TimeModeToDisplayTextConverter : IValueConverter, IMarkupExtension
     {
@@ -17,7 +22,6 @@ namespace Chronos.UI
             {
                 if (source == SourceControl.TrackButton)
                 {
-
                     if (timeMode == TimeMode.Stopped)
                     {
                         return "Start";

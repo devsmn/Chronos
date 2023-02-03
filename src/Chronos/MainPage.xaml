@@ -87,7 +87,7 @@
 
                 <Label Grid.Column="1" 
                        Grid.Row="2"
-                       Text="{Binding ActiveTimeEntry.Duration}" />
+                       Text="{Binding ActiveTimeEntry.Duration, Converter={local:DuratioToHumaTextConverter}}" />
 
 
             </Grid>
