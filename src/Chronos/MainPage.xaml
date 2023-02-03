@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Chronos.UI"
+             x:Class="Chronos.UI.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            Padding="30,0">
+
+            <!--<ListView ItemsSource="{Binding TimeEntries}" HasUnevenRows="true" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0"
+                                       Text="{Binding StartTime}" />
+
+                                <Label Grid.Row="1"
+                                       Text="{Binding EndTime}" />
+
+                                <Label Grid.Row="2"
+                                       Text="{Binding Duration}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    Command="{Binding OnToggleTimeClickedCommand}"
+                    IsVisible="{Binding TimeMode, Converter={local:TimeModeToIsVisibleConverter}, ConverterParameter={x:Static local:SourceControl.TrackButton}}"
+                    Text="{Binding TimeMode, Converter={local:TimeModeToDisplayTextConverter}, ConverterParameter={x:Static local:SourceControl.TrackButton}}"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Margin="2"
+                    HorizontalOptions="Center" />
+
+                <Button 
+                    Command="{Binding OnTogglePauseClickedCommand}"
+                    Text="{Binding TimeMode, Converter={local:TimeModeToDisplayTextConverter}, ConverterParameter={x:Static local:SourceControl.PauseButton}}"
+                    IsVisible="{Binding TimeMode, Converter={local:TimeModeToIsVisibleConverter}, ConverterParameter={x:Static local:SourceControl.PauseButton}}"
+                    Margin="2"
+                    HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Checked in at" />
+
+                <Label Grid.Column="1" 
+                       Text="{Binding ActiveTimeEntry.StartTime}" />
+
+                <Label  Grid.Row="1"   
+                        Text="Checked out at" />
+
+                <Label Grid.Column="1" 
+                       Grid.Row="1"
+                       Text="{Binding ActiveTimeEntry.EndTime}" />
+
+                <Label  Grid.Row="2"   
+                        Text="Duration" />
+
+                <Label Grid.Column="1" 
+                       Grid.Row="2"
+                       Text="{Binding ActiveTimeEntry.Duration}" />
+
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

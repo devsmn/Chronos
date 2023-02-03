@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronos.UI", "Chronos\Chronos.UI.csproj", "{88302C97-887B-46AC-BA4F-247711F365B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronos.DataModel", "Chronos.DataModel\Chronos.DataModel.csproj", "{28777986-4FC4-4AD7-8D3D-F6288FC23D1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronos.Data.SQLite", "Chronos.Data.SQLite\Chronos.Data.SQLite.csproj", "{EC3694A3-82D0-4A02-9DE7-E01BC51B348B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3B947701-1343-4512-97CD-270C3945A0EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{F729968A-6BC8-4AC2-9A17-DC16DB788981}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronos.UI.Core", "Chronos.UI.Core\Chronos.UI.Core.csproj", "{A0073C3B-5083-4ACD-BEBC-86501B9E2429}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chronos.DataModel.Core", "Chronos.DataModel.Core\Chronos.DataModel.Core.csproj", "{3E4C1591-549F-48C1-936D-F093D9ED2BBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88302C97-887B-46AC-BA4F-247711F365B6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{28777986-4FC4-4AD7-8D3D-F6288FC23D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28777986-4FC4-4AD7-8D3D-F6288FC23D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28777986-4FC4-4AD7-8D3D-F6288FC23D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28777986-4FC4-4AD7-8D3D-F6288FC23D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3694A3-82D0-4A02-9DE7-E01BC51B348B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3694A3-82D0-4A02-9DE7-E01BC51B348B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3694A3-82D0-4A02-9DE7-E01BC51B348B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3694A3-82D0-4A02-9DE7-E01BC51B348B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0073C3B-5083-4ACD-BEBC-86501B9E2429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0073C3B-5083-4ACD-BEBC-86501B9E2429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0073C3B-5083-4ACD-BEBC-86501B9E2429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0073C3B-5083-4ACD-BEBC-86501B9E2429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4C1591-549F-48C1-936D-F093D9ED2BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4C1591-549F-48C1-936D-F093D9ED2BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4C1591-549F-48C1-936D-F093D9ED2BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4C1591-549F-48C1-936D-F093D9ED2BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88302C97-887B-46AC-BA4F-247711F365B6} = {F729968A-6BC8-4AC2-9A17-DC16DB788981}
+		{28777986-4FC4-4AD7-8D3D-F6288FC23D1B} = {3B947701-1343-4512-97CD-270C3945A0EC}
+		{EC3694A3-82D0-4A02-9DE7-E01BC51B348B} = {3B947701-1343-4512-97CD-270C3945A0EC}
+		{A0073C3B-5083-4ACD-BEBC-86501B9E2429} = {F729968A-6BC8-4AC2-9A17-DC16DB788981}
+		{3E4C1591-549F-48C1-936D-F093D9ED2BBE} = {3B947701-1343-4512-97CD-270C3945A0EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal
