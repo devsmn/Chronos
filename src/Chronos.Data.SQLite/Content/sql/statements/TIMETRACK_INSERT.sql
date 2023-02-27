@@ -1,0 +1,1 @@
+﻿INSERT INTO TIMETRACK (tt_startTime, tt_endTime) VALUES (@tt_startTime, @tt_endTime);

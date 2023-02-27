@@ -57,6 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Chronos.Data.Stores\Chronos.Data.SQLite.Provider.csproj" />
 	  <ProjectReference Include="..\Chronos.DataModel\Chronos.DataModel.csproj" />
 	  <ProjectReference Include="..\Chronos.UI.Core\Chronos.UI.Core.csproj" />
 	</ItemGroup>

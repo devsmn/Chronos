@@ -10,7 +10,7 @@ namespace Chronos.DataModel.Core
     using System.Runtime.CompilerServices;
 
     public abstract class ObservableEntity<TEntityKey> : Entity<TEntityKey>, INotifyPropertyChanged 
-        where TEntityKey : EntityKey
+        where TEntityKey : class
     {
        
         // ---- public properties ----
@@ -21,7 +21,7 @@ namespace Chronos.DataModel.Core
         /// Initializes a new instance of <see cref="Entity{TEntityKey}"/>.
         /// </summary>
         /// <param name="key"></param>
-        public ObservableEntity(EntityKey key)
+        public ObservableEntity(TEntityKey key)
             : base(key)
         {
         }

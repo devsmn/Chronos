@@ -8,12 +8,12 @@ namespace Chronos.DataModel.Core
     using System;
     using System.ComponentModel;
 
-    public class Entity<TEntityKey> where TEntityKey : EntityKey
+    public class Entity<TKey> where TKey : class
     {
         // ---- public properties ----
         public DateTime CreationDate { get; set; }
 
-        public EntityKey Key { get; private set; }
+        public TKey Key { get; private set; }
 
         // ---- constructor ----
 
@@ -21,9 +21,16 @@ namespace Chronos.DataModel.Core
         /// Initializes a new instance of <see cref="Entity{TEntityKey}"/>.
         /// </summary>
         /// <param name="key"></param>
-        public Entity(EntityKey key)
+        public Entity(TKey key)
         {
             this.Key = key;
         }
+
+        // ---- methods ----
+        public virtual void SetKey(TKey key)
+        {
+            this.Key = key;
+        }
+
     }
 }

@@ -1,0 +1,1 @@
+﻿INSERT INTO TIMETRACK_BREAK (TT_ref, TTB_startTime, TTB_endTime) VALUES (@TT_ref, @TTB_startTime, @TTB_endTime);

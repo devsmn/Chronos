@@ -15,7 +15,6 @@ namespace Chronos.UI
     internal class MainPageViewModel : BaseViewModel
     {
         // ---- private fields ----
-        private int tapCount;
         Command onToggleTimeClickedCommand;
         Command onTogglePauseClickedCommand;
         private ObservableCollection<TimeEntry> timeEntries;
@@ -23,20 +22,26 @@ namespace Chronos.UI
         private TimeMode timeMode;
 
         // ---- public properties ----
-
+        /// <summary>
+        /// Gets or sets the current <see cref="TimeMode"/>.
+        /// </summary>
         public TimeMode TimeMode
         {
             get { return this.timeMode; }
             set { this.SetProperty(ref this.timeMode, value); }
         }
 
-
+        /// <summary>
+        /// Gets or sets the current <see cref="TimeEntry"/>.
+        /// </summary>
         public TimeEntry ActiveTimeEntry
         {
             get { return this.activeTimeEntry; }
             set { this.SetProperty(ref this.activeTimeEntry, value); }
         }
 
+        /// <summary>
+        /// </summary>
         public ObservableCollection<TimeEntry> TimeEntries
         {
             get
@@ -49,6 +54,7 @@ namespace Chronos.UI
                 return this.timeEntries;
             }
         }
+
 
         public Command OnToggleTimeClickedCommand
         {
@@ -70,11 +76,6 @@ namespace Chronos.UI
             }
         }
 
-        public int TapCount
-        {
-            get { return this.tapCount; }
-            set { this.SetProperty(ref this.tapCount, value); }
-        }
 
         // ---- constructor ----
 
@@ -149,6 +150,9 @@ namespace Chronos.UI
             }
         }
 
+        /// <summary>
+        /// Creates a new <see cref="TimeEntry"/>.
+        /// </summary>
         private void CreateNewActiveTimeEntry()
         {
             this.ActiveTimeEntry = new TimeEntry(IntegerEntityKey.TemporaryId);

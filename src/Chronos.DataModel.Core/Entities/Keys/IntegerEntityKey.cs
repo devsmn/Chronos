@@ -5,15 +5,13 @@
 
 namespace Chronos.DataModel.Core
 {
-    public class IntegerEntityKey : EntityKey
+    public class IntegerEntityKey : EntityKey<int>
     {
-        public static IntegerEntityKey TemporaryId { get { return new IntegerEntityKey(-1); } }
-
-        public int Id { get; private set; }
+        public static int TemporaryId { get; } = -1;
 
         public IntegerEntityKey(int key)
+            : base(key)
         {
-            this.Id = key;
         }
 
         public bool TryParse(string id, out IntegerEntityKey key)

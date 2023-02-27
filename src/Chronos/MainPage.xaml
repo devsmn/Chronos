@@ -13,34 +13,6 @@
             VerticalOptions="Fill"
             Padding="30,0">
 
-            <!--<ListView ItemsSource="{Binding TimeEntries}" HasUnevenRows="true" SelectionMode="None">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Grid.Row="0"
-                                       Text="{Binding StartTime}" />
-
-                                <Label Grid.Row="1"
-                                       Text="{Binding EndTime}" />
-
-                                <Label Grid.Row="2"
-                                       Text="{Binding Duration}" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
             <HorizontalStackLayout
                 HorizontalOptions="Center">
                 <Button
@@ -87,7 +59,7 @@
 
                 <Label Grid.Column="1" 
                        Grid.Row="2"
-                       Text="{Binding ActiveTimeEntry.Duration, Converter={local:DuratioToHumaTextConverter}}" />
+                       Text="{Binding ActiveTimeEntry.Duration, Converter={local:DurationToHumanTextConverter}}" />
 
 
             </Grid>
