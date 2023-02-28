@@ -40,7 +40,7 @@ namespace Chronos.Data.SQLite
         /// <inheritdoc/>
         public override void Save(IContext context, TimeEntry entry)
         {
-            if (entry.Key == null)
+            if (entry.Key == null || entry?.Key.Id == IntegerEntityKey.TemporaryId)
             {
                 this.InsertCore(entry);
             }

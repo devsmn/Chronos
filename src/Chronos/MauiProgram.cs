@@ -1,12 +1,12 @@
 ﻿using Chronos.Data.SQLite;
 using Chronos.Data.SQLite.Provider;
-using Chronos.Data.SQLite.Provider.Content.DataStore;
 using Chronos.Data.Stores;
 using Chronos.DataModel;
 using Chronos.DataModel.Core;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Chronos.UI;
 
@@ -28,8 +28,9 @@ public static class MauiProgram
 #endif
         new SQLiteProvider().Initialize();
 
-        TaskHelper.RunAsSync(() => DataStore.InitializeAsync());
+        DataStore.InitializeAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         return builder.Build();
 	}
+
 }

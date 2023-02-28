@@ -14,10 +14,5 @@ namespace Chronos.DataModel
                 .GetAwaiter()
                 .GetResult();
         }
-
-        public static Task RunAsSync(Func<Task> task)
-        {
-            return Task.FromResult(task);
-        }
     }
 }

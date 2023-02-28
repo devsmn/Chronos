@@ -36,6 +36,7 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
@@ -64,7 +65,52 @@
 
             </Grid>
 
+                <ListView ItemsSource="{Binding TimeEntries}"
+                          HasUnevenRows="True"
+                          Margin="5"
+                          HeightRequest="400">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Start time: " />
+
+                                    <Label Text="{Binding StartTime}" 
+                                           Grid.Column="1" />
+
+                                    <Label Text="End time: " 
+                                           Grid.Row="1" />
+
+                                    <Label Text="{Binding EndTime}" 
+                                           Grid.Row="1" 
+                                           Grid.Column="1"/>
+
+                                <Label Text="Duration: " 
+                                           Grid.Row="2" />
+
+                                <Label Text="{Binding Duration, Converter={local:DurationToHumanTextConverter}}" 
+                                           Grid.Row="2" 
+                                           Grid.Column="1"/>
+                            </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

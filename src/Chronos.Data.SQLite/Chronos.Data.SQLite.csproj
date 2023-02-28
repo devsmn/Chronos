@@ -28,8 +28,8 @@
 	<ItemGroup>
 	  <None Remove="Content\sql\statements\TIMETRACK_BREAK_INSERT.sql" />
 	  <None Remove="Content\sql\statements\TIMETRACK_INSERT.sql" />
-	  <None Remove="Content\sql\statements\TIMETRACK_INSERT_UPDATE.sql" />
 	  <None Remove="Content\sql\statements\TIMETRACK_READ.sql" />
+	  <None Remove="Content\sql\statements\TIMETRACK_UPDATE.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -46,15 +46,28 @@
 	<ItemGroup>
 	  <MauiAsset Include="Content\sql\statements\TIMETRACK_BREAK_INSERT.sql">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
-	  <MauiAsset Include="Content\sql\statements\TIMETRACK_INSERT_UPDATE.sql">
+	  <MauiAsset Include="Content\sql\statements\TIMETRACK_UPDATE.sql">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Include="Content\sql\statements\TIMETRACK_INSERT.sql">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
 	  <MauiAsset Include="Content\sql\statements\TIMETRACK_READ.sql">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Content\sql\install\CREATE_TABLE_TIMETRACK.sql">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Content\sql\install\CREATE_TABLE_TIMETRACK_BREAK.sql">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
 	</ItemGroup>
 

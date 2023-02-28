@@ -10,6 +10,7 @@ namespace Chronos.DataModel
     using Chronos.DataModel.Core;
     using System;
     using System.Collections.Generic;
+    using System.Runtime.CompilerServices;
 
     public partial class TimeEntry : ObservableEntity<TimeEntryKey>
     {
@@ -177,6 +178,7 @@ namespace Chronos.DataModel
                         this.StartTime.GetValueOrDefault()).Subtract(TimeSpan.FromSeconds(breakTime))
                     : TimeSpan.Zero;
         }
+
 
     }
 }

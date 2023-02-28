@@ -9,7 +9,6 @@ namespace Chronos.UI
     using Chronos.DataModel;
     using Chronos.DataModel.Core;
     using Chronos.UI.Core;
-    using System;
     using System.Collections.ObjectModel;
 
     internal class MainPageViewModel : BaseViewModel
@@ -53,6 +52,11 @@ namespace Chronos.UI
 
                 return this.timeEntries;
             }
+
+            private set
+            {
+                timeEntries = value;
+            }
         }
 
 
@@ -77,6 +81,7 @@ namespace Chronos.UI
         }
 
 
+
         // ---- constructor ----
 
         /// <summary>
@@ -85,6 +90,17 @@ namespace Chronos.UI
         public MainPageViewModel()
         {
             this.TimeMode = TimeMode.Stopped;
+
+            this.TimeEntries = new ObservableCollection<TimeEntry>(TimeEntry.ReadAll(null));
+
+            var startTime = Preferences.Get("StartTime", DateTime.MinValue);
+
+            if (startTime != DateTime.MinValue)
+            {
+                this.CreateNewActiveTimeEntry();
+                this.ActiveTimeEntry.StartTime = startTime;
+                this.TimeMode = TimeMode.Tracking;
+            }
         }
 
         // ---- methods ----
@@ -116,6 +132,17 @@ namespace Chronos.UI
             if (this.ActiveTimeEntry.IsFinished)
             {
                 this.TimeEntries.Add(this.ActiveTimeEntry);
+
+                this.ActiveTimeEntry.Save(null);
+
+                Preferences.Remove("StartTime");
+            }
+            else
+            {
+                if (this.ActiveTimeEntry.IsStartTimeSet)
+                {
+                    Preferences.Set("StartTime", this.ActiveTimeEntry.StartTime.GetValueOrDefault());
+                }
             }
         }
 
